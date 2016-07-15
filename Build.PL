@@ -20,6 +20,7 @@ my $builder = Module::Build->new(
     },
     test_requires => {
         'Test::More' => 0,
+        'Test::CheckManifest' => '>= 0.9',
     },
     requires => {
         'Carp' => '>= 1.38', 
