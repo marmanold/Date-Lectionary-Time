@@ -1,14 +1,4 @@
 language: perl
 perl:
-  - "5.22"              # installs latest perl 5.22
-  - "dev"               # installs latest developer release of perl
-  - "blead"             # builds perl from git
-matrix:
-  include:
-    - perl: 5.22
-      env: COVERAGE=1   # enables coverage+coveralls reporting
-  allow_failures:
-    - perl: blead       # ignore failures for blead perl
-sudo: false             # faster builds as long as you don't need sudo access
-before_install:
-  - eval $(curl https://travis-perl.github.io/init) --auto
+  - "5.22"
+  
