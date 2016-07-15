@@ -1,0 +1,8 @@
+language: perl
+perl:
+  - "5.22"
+
+install:
+	- cpanm -v --installdeps --notest .
+
+script: "perl Build.PL"
