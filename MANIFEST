@@ -2,7 +2,7 @@ Changes
 lib/Date/Lectionary/Time.pm
 Makefile.PL
 MANIFEST			This list of files
-README
+README.pod
 t/00-load.t
 t/01-nextSunday.t
 t/02-prevSunday.t
