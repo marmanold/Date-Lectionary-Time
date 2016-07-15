@@ -1,0 +1,15 @@
+^_build
+^Build$
+^blib
+~$
+\.bak$
+^MANIFEST\.SKIP$
+CVS
+\.gitignore
+\.travis.yml
+ignore\.txt
+^MYMETA\.json$
+^MYMETA\.yml$
+^\.git
+^\cover_db
+^Date-Lectionary-Time-*

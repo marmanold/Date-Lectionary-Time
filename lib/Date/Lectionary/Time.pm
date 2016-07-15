@@ -15,7 +15,7 @@ use Time::Seconds;
 
 =head1 NAME
 
-Date::Lectionary::Time - The great new Date::Lectionary::Time!
+Date::Lectionary::Time
 
 =head1 VERSION
 
@@ -28,14 +28,14 @@ our $VERSION = '1.20160524';
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
+Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date.
 
-Perhaps a little code snippet.
+	use Time::Piece;
+    use Date::Lectionary::Time qw(nextSunday prevSunday);
 
-    use Date::Lectionary::Time;
-
-    my $foo = Date::Lectionary::Time->new();
-    ...
+    my $christmasDay = Time::Piece->strptime("2015-12-25", "%Y-%m-%d");
+    my $sundayAfterChristmas = &nextSunday($christmasDay);
+    my $sundayBeforeChristmas = &prevSunday($christmasDay);
 
 =head1 EXPORT
 
@@ -45,7 +45,7 @@ prevSunday
 =head1 SUBROUTINES/METHODS
 
 =head2 nextSunday
-
+For a given Time::Piece date returns a Time::Piece object of the date of the Sunday immediately following the given date.
 =cut
 
 sub nextSunday() {
@@ -71,7 +71,7 @@ sub nextSunday() {
 }
 
 =head2 prevSunday
-
+For a given Time::Piece date returns a Time::Piece object of the date of the Sunday immediately before the given date.
 =cut
 
 sub prevSunday() {

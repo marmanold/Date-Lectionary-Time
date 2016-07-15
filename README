@@ -1,18 +1,21 @@
-Date-Lectionary-Time
+=head1 NAME
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+Date::Lectionary::Time
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+=head1 SYNOPSIS
 
+    use Time::Piece;
+    use Date::Lectionary::Time qw(nextSunday prevSunday);
 
-INSTALLATION
+    my $christmasDay = Time::Piece->strptime("2015-12-25", "%Y-%m-%d");
+    my $sundayAfterChristmas = &nextSunday($christmasDay);
+    my $sundayBeforeChristmas = &prevSunday($christmasDay);
+
+=head1 DESCRIPTION
+
+Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date.
+
+=head1 INSTALLATION
 
 To install this module, run the following commands:
 
@@ -21,7 +24,11 @@ To install this module, run the following commands:
 	./Build test
 	./Build install
 
-SUPPORT AND DOCUMENTATION
+The development branch of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Lectionary-Time> -- and tested via TravisCI.
+
+=for html <a href="https://travis-ci.org/marmanold/Date-Lectionary-Time"><img src="https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master"></a>
+
+=head1 SUPPORT AND DOCUMENTATION
 
 After installing, you can find documentation for this module with the
 perldoc command.
@@ -43,7 +50,7 @@ You can also look for information at:
         http://search.cpan.org/dist/Date-Lectionary-Time/
 
 
-LICENSE AND COPYRIGHT
+=head1 LICENSE AND COPYRIGHT
 
 Copyright (C) 2016 Michael Wayne Arnold
 
