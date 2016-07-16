@@ -1,9 +1,3 @@
 language: perl
 perl:
   - "5.22"
-notifications:
-	email:
-		recipients:
-			- michael@rnold.info
-		on_success: change
-		on_failure: change
