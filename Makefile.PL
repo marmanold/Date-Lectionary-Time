@@ -14,8 +14,9 @@ WriteMakefile(
         'ExtUtils::MakeMaker' => 0,
     },
     BUILD_REQUIRES => {
-        'Test::More' => 0,
+        'Test::More' => '1.302040',
         'Test::CheckManifest' => '0.9',
+        'Test::Exception' => '0.43', 
     },
     PREREQ_PM => {
         'Carp' => '1.38', 
