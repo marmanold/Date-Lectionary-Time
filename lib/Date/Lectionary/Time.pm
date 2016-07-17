@@ -45,7 +45,9 @@ prevSunday
 =head1 SUBROUTINES/METHODS
 
 =head2 nextSunday
+
 For a given Time::Piece date returns a Time::Piece object of the date of the Sunday immediately following the given date.
+
 =cut
 
 sub nextSunday() {
@@ -71,7 +73,9 @@ sub nextSunday() {
 }
 
 =head2 prevSunday
+
 For a given Time::Piece date returns a Time::Piece object of the date of the Sunday immediately before the given date.
+
 =cut
 
 sub prevSunday() {
