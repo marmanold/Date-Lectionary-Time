@@ -19,11 +19,11 @@ Date::Lectionary::Time
 
 =head1 VERSION
 
-Version 1.20160524
+Version 1.20160721
 
 =cut
 
-our $VERSION = '1.20160524';
+our $VERSION = '1.20160721';
 
 
 =head1 SYNOPSIS
@@ -55,6 +55,10 @@ sub nextSunday() {
 	my $date = $params[0] // $class;
 	my $nextSunday = undef;
 
+	if (!length $date) {
+		croak "Method [nextSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
+	}
+
 	if($date->isa('Time::Piece')) {
 		try{
 			my $daysToAdd = 7-$date->_wday;
@@ -62,7 +66,7 @@ sub nextSunday() {
 			$nextSunday = $date + $secondsToAdd;
 		}
 		catch{
-			carp "Could not calculate the next Sunday after $date.";
+			croak "Could not calculate the next Sunday after $date.";
 		}
 	}
 	else {
@@ -82,6 +86,10 @@ sub prevSunday() {
 	my ($class, @params) = @_;
 	my $date = $params[0] // $class;
 	my $prevSunday = undef;
+
+	if (!length $date) {
+		croak "Method [prevSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
+	}
 
 	if($date->isa('Time::Piece')) {
 		try{

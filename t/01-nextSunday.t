@@ -2,7 +2,7 @@
 use v5.22;
 use strict;
 use warnings;
-use Test::More tests=>7;
+use Test::More tests=>8;
 use Test::Exception;
 
 use Time::Piece;
@@ -46,6 +46,13 @@ is(
 #Testing for a non-Time::Piece input argument
 throws_ok (
 	sub{&nextSunday('2016-01-01')}, 
-	qr/Method \[nextSunday\] expects an input argument of type Time::Piece./, 
-	'Blah'
+	qr/Method \[nextSunday\] expects an input argument of type Time::Piece\./, 
+	'String input argument given instead of Time::Piece'
+);
+
+#Testing for an undefined input argument
+throws_ok (
+	sub{&nextSunday(undef)}, 
+	qr/Method \[nextSunday\] expects an input argument of type Time::Piece\.  The given type could not be determined\./, 
+	'Undefined input argument given instead of Time::Piece'
 );

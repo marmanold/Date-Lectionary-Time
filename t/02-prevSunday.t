@@ -2,7 +2,7 @@
 use v5.22;
 use strict;
 use warnings;
-use Test::More tests=>5;
+use Test::More tests=>8;
 use Test::Exception;
 
 use Time::Piece;
@@ -29,9 +29,30 @@ is(
 	'Sunday previous to 2015-12-27 is 2015-12-20'
 );
 
+#Testing for a date far in the future
+is(
+	&prevSunday(Time::Piece->strptime("3098-12-01", "%Y-%m-%d")),
+	Time::Piece->strptime("3098-11-27", "%Y-%m-%d"),
+	'Sunday previous 3098-12-01 is 3098-11-27'
+);
+
+#Testing for a leap day
+is(
+	&prevSunday(Time::Piece->strptime("2016-02-29", "%Y-%m-%d")),
+	Time::Piece->strptime("2016-02-28", "%Y-%m-%d"),
+	'Sunday previous to 2016-02-29 is 2016-02-28'
+);
+
 #Testing for a non-Time::Piece input argument
 throws_ok (
 	sub{&prevSunday('2016-01-01')}, 
-	qr/Method \[prevSunday\] expects an input argument of type Time::Piece./, 
-	'Blah'
+	qr/Method \[prevSunday\] expects an input argument of type Time::Piece\./, 
+	'String input argument given instead of Time::Piece'
+);
+
+#Testing for an undefined input argument
+throws_ok (
+	sub{&prevSunday(undef)}, 
+	qr/Method \[prevSunday\] expects an input argument of type Time::Piece\.  The given type could not be determined\./, 
+	'Undefined input argument given instead of Time::Piece'
 );
