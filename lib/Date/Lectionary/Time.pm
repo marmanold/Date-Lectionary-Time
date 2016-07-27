@@ -23,7 +23,7 @@ Version 1.20160721
 
 =cut
 
-our $VERSION = '1.20160721';
+our $VERSION = '1.20160727';
 
 
 =head1 SYNOPSIS
@@ -50,7 +50,7 @@ For a given Time::Piece date returns a Time::Piece object of the date of the Sun
 
 =cut
 
-sub nextSunday() {
+sub nextSunday {
 	my ($class, @params) = @_;
 	my $date = $params[0] // $class;
 	my $nextSunday = undef;
@@ -82,7 +82,7 @@ For a given Time::Piece date returns a Time::Piece object of the date of the Sun
 
 =cut
 
-sub prevSunday() {
+sub prevSunday {
 	my ($class, @params) = @_;
 	my $date = $params[0] // $class;
 	my $prevSunday = undef;
