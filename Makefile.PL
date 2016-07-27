@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME             => 'Date::Lectionary::Time',
-    AUTHOR           => q{Michael Wayne Arnold <michael@rnold.info>},
+    AUTHOR           => q{Michael Wayne Arnold <marmanold@cpan.org>},
     VERSION_FROM     => 'lib/Date/Lectionary/Time.pm',
     ABSTRACT         => 'Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date.',
     LICENSE          => 'perl_5',

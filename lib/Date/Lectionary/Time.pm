@@ -19,7 +19,7 @@ Date::Lectionary::Time
 
 =head1 VERSION
 
-Version 1.20160721
+Version 1.20160727
 
 =cut
 
@@ -111,13 +111,12 @@ sub prevSunday {
 
 =head1 AUTHOR
 
-Michael Wayne Arnold, C<< <michael at rnold.info> >>
+Michael Wayne Arnold, C<< <marmanold at cpan.org> >>
 
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-date-lectionary-time at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 
 
