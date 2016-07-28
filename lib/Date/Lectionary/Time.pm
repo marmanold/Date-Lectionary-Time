@@ -34,8 +34,8 @@ Working in the liturgical time of the lectionary means tracking time relative to
     use Date::Lectionary::Time qw(nextSunday prevSunday);
 
     my $christmasDay = Time::Piece->strptime("2015-12-25", "%Y-%m-%d");
-    my $sundayAfterChristmas = &nextSunday($christmasDay);
-    my $sundayBeforeChristmas = &prevSunday($christmasDay);
+    my $sundayAfterChristmas = nextSunday($christmasDay);
+    my $sundayBeforeChristmas = prevSunday($christmasDay);
 
 =head1 EXPORT
 
