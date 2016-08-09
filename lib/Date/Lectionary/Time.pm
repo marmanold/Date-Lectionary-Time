@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use Exporter::Easy (
-	OK => [qw(nextSunday prevSunday)],
+	OK => [qw(nextSunday prevSunday closestSunday)],
 );
 
 use Carp;
@@ -19,28 +19,30 @@ Date::Lectionary::Time
 
 =head1 VERSION
 
-Version 1.20160727
+Version 1.20160809
 
 =cut
 
-our $VERSION = '1.20160727';
+our $VERSION = '1.20160809';
 
 
 =head1 SYNOPSIS
 
-Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date.
+Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date or the closest Sunday to a given date.
 
 	use Time::Piece;
-    use Date::Lectionary::Time qw(nextSunday prevSunday);
+    use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday);
 
     my $christmasDay = Time::Piece->strptime("2015-12-25", "%Y-%m-%d");
     my $sundayAfterChristmas = nextSunday($christmasDay);
     my $sundayBeforeChristmas = prevSunday($christmasDay);
+		my $sundayClosestToChristmas = closestSunday($christmasDay);
 
 =head1 EXPORT
 
 nextSunday
 prevSunday
+closestSunday
 
 =head1 SUBROUTINES/METHODS
 
@@ -72,7 +74,7 @@ sub nextSunday {
 	else {
 		croak "Method [nextSunday] expects an input argument of type Time::Piece.";
 	}
-	
+
 	return $nextSunday;
 }
 
@@ -107,6 +109,52 @@ sub prevSunday {
 	}
 
 	return $prevSunday;
+}
+
+=head2 closestSunday
+
+For a given Time::Piece date returns a Time::Piece object of the date of the Sunday closest to the given date.
+
+=cut
+
+sub closestSunday {
+	my ($class, @params) = @_;
+	my $date = $params[0] // $class;
+	my $closestSunday = undef;
+
+	if (!length $date) {
+		croak "Method [closestSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
+	}
+
+	if($date->isa('Time::Piece')) {
+		try{
+			my $nextSunday = nextSunday($date);
+			my $prevSunday = prevSunday($date);
+
+			my ($dif1, $dif2);
+
+			$dif1 = abs($date - $nextSunday);
+			$dif2 = abs($prevSunday - $date);
+
+			if ($dif1 < $dif2) {
+				$closestSunday = $nextSunday;
+			}
+			elsif ($dif1 == $dif2) {
+				$closestSunday = $date;
+			}
+			else {
+				$closestSunday = $prevSunday;
+			}
+		}
+		catch {
+			carp "Could not calculate the Sunday closest to $date.";
+		}
+	}
+	else {
+		croak "Method [closestSunday] expects an input argument of type Time::Piece.";
+	}
+
+	return $closestSunday;
 }
 
 =head1 AUTHOR

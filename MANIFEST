@@ -5,6 +5,7 @@ README.pod
 t/00-load.t
 t/01-nextSunday.t
 t/02-prevSunday.t
+t/03-closestSunday.t
 t/manifest.t
 t/pod-coverage.t
 t/pod.t
