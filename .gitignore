@@ -17,3 +17,4 @@ pod2htm*.tmp
 pm_to_blib
 Date-Lectionary-Time-*
 Date-Lectionary-Time-*.tar.gz
+.DS_Store
