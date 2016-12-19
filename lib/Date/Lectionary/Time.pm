@@ -4,9 +4,7 @@ use v5.22;
 use strict;
 use warnings;
 
-use Exporter::Easy (
-	OK => [qw(nextSunday prevSunday closestSunday)],
-);
+use Exporter::Easy ( OK => [qw(nextSunday prevSunday closestSunday)], );
 
 use Carp;
 use Try::Tiny;
@@ -19,24 +17,23 @@ Date::Lectionary::Time
 
 =head1 VERSION
 
-Version 1.20160809
+Version 1.20161219
 
 =cut
 
-our $VERSION = '1.20160809';
-
+our $VERSION = '1.20161219';
 
 =head1 SYNOPSIS
 
-Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date or the closest Sunday to a given date.
+Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.
 
 	use Time::Piece;
-    use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday);
+	use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday);
 
-    my $christmasDay = Time::Piece->strptime("2015-12-25", "%Y-%m-%d");
-    my $sundayAfterChristmas = nextSunday($christmasDay);
-    my $sundayBeforeChristmas = prevSunday($christmasDay);
-		my $sundayClosestToChristmas = closestSunday($christmasDay);
+	my $christmasDay = Time::Piece->strptime("2015-12-25", "%Y-%m-%d");
+	my $sundayAfterChristmas = nextSunday($christmasDay);
+	my $sundayBeforeChristmas = prevSunday($christmasDay);
+	my $sundayClosestToChristmas = closestSunday($christmasDay);
 
 =head1 EXPORT
 
@@ -53,29 +50,31 @@ For a given Time::Piece date returns a Time::Piece object of the date of the Sun
 =cut
 
 sub nextSunday {
-	my ($class, @params) = @_;
-	my $date = $params[0] // $class;
-	my $nextSunday = undef;
+    my ( $class, @params ) = @_;
+    my $date = $params[0] // $class;
+    my $nextSunday = undef;
 
-	if (!length $date) {
-		croak "Method [nextSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
-	}
+    if ( !length $date ) {
+        croak
+"Method [nextSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
+    }
 
-	if($date->isa('Time::Piece')) {
-		try{
-			my $daysToAdd = 7-$date->_wday;
-			my $secondsToAdd = $daysToAdd * ONE_DAY;
-			$nextSunday = $date + $secondsToAdd;
-		}
-		catch{
-			croak "Could not calculate the next Sunday after $date.";
-		}
-	}
-	else {
-		croak "Method [nextSunday] expects an input argument of type Time::Piece.";
-	}
+    if ( $date->isa('Time::Piece') ) {
+        try {
+            my $daysToAdd    = 7 - $date->_wday;
+            my $secondsToAdd = $daysToAdd * ONE_DAY;
+            $nextSunday = $date + $secondsToAdd;
+        }
+        catch {
+            croak "Could not calculate the next Sunday after $date.";
+        };
+    }
+    else {
+        croak
+          "Method [nextSunday] expects an input argument of type Time::Piece.";
+    }
 
-	return $nextSunday;
+    return $nextSunday;
 }
 
 =head2 prevSunday
@@ -85,30 +84,32 @@ For a given Time::Piece date returns a Time::Piece object of the date of the Sun
 =cut
 
 sub prevSunday {
-	my ($class, @params) = @_;
-	my $date = $params[0] // $class;
-	my $prevSunday = undef;
+    my ( $class, @params ) = @_;
+    my $date = $params[0] // $class;
+    my $prevSunday = undef;
 
-	if (!length $date) {
-		croak "Method [prevSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
-	}
+    if ( !length $date ) {
+        croak
+"Method [prevSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
+    }
 
-	if($date->isa('Time::Piece')) {
-		try{
-			my $daysToSubtract = $date->_wday;
-			if($daysToSubtract == 0) {$daysToSubtract = 7;}
-			my $secondsToSubtract = $daysToSubtract * ONE_DAY;
-			$prevSunday = $date - $secondsToSubtract;
-		}
-		catch {
-			carp "Could not calculate the previous Sunday before $date.";
-		}
-	}
-	else {
-		croak "Method [prevSunday] expects an input argument of type Time::Piece.";
-	}
+    if ( $date->isa('Time::Piece') ) {
+        try {
+            my $daysToSubtract = $date->_wday;
+            if ( $daysToSubtract == 0 ) { $daysToSubtract = 7; }
+            my $secondsToSubtract = $daysToSubtract * ONE_DAY;
+            $prevSunday = $date - $secondsToSubtract;
+        }
+        catch {
+            carp "Could not calculate the previous Sunday before $date.";
+        };
+    }
+    else {
+        croak
+          "Method [prevSunday] expects an input argument of type Time::Piece.";
+    }
 
-	return $prevSunday;
+    return $prevSunday;
 }
 
 =head2 closestSunday
@@ -118,43 +119,45 @@ For a given Time::Piece date returns a Time::Piece object of the date of the Sun
 =cut
 
 sub closestSunday {
-	my ($class, @params) = @_;
-	my $date = $params[0] // $class;
-	my $closestSunday = undef;
+    my ( $class, @params ) = @_;
+    my $date = $params[0] // $class;
+    my $closestSunday = undef;
 
-	if (!length $date) {
-		croak "Method [closestSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
-	}
+    if ( !length $date ) {
+        croak
+"Method [closestSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
+    }
 
-	if($date->isa('Time::Piece')) {
-		try{
-			my $nextSunday = nextSunday($date);
-			my $prevSunday = prevSunday($date);
+    if ( $date->isa('Time::Piece') ) {
+        try {
+            my $nextSunday = nextSunday($date);
+            my $prevSunday = prevSunday($date);
 
-			my ($dif1, $dif2);
+            my ( $dif1, $dif2 );
 
-			$dif1 = abs($date - $nextSunday);
-			$dif2 = abs($prevSunday - $date);
+            $dif1 = abs( $date - $nextSunday );
+            $dif2 = abs( $prevSunday - $date );
 
-			if ($dif1 < $dif2) {
-				$closestSunday = $nextSunday;
-			}
-			elsif ($dif1 == $dif2) {
-				$closestSunday = $date;
-			}
-			else {
-				$closestSunday = $prevSunday;
-			}
-		}
-		catch {
-			carp "Could not calculate the Sunday closest to $date.";
-		}
-	}
-	else {
-		croak "Method [closestSunday] expects an input argument of type Time::Piece.";
-	}
+            if ( $dif1 < $dif2 ) {
+                $closestSunday = $nextSunday;
+            }
+            elsif ( $dif1 == $dif2 ) {
+                $closestSunday = $date;
+            }
+            else {
+                $closestSunday = $prevSunday;
+            }
+        }
+        catch {
+            carp "Could not calculate the Sunday closest to $date.";
+        };
+    }
+    else {
+        croak
+"Method [closestSunday] expects an input argument of type Time::Piece.";
+    }
 
-	return $closestSunday;
+    return $closestSunday;
 }
 
 =head1 AUTHOR
@@ -215,4 +218,4 @@ See L<http://dev.perl.org/licenses/> for more information.
 
 =cut
 
-1; # End of Date::Lectionary::Time
+1;    # End of Date::Lectionary::Time

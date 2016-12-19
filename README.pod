@@ -1,3 +1,4 @@
+
 =head1 NAME
 
 Date::Lectionary::Time
@@ -14,7 +15,7 @@ Date::Lectionary::Time
 
 =head1 DESCRIPTION
 
-Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date.
+Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.
 
 =head1 INSTALLATION
 
