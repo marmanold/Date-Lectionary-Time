@@ -1,10 +1,10 @@
 {
-   "abstract" : "Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next or previous Sunday relative to a given date.",
+   "abstract" : "Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.",
    "author" : [
       "Michael Wayne Arnold <marmanold@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 7.18, CPAN::Meta::Converter version 2.150001",
+   "generated_by" : "ExtUtils::MakeMaker version 7.18, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -45,5 +45,6 @@
    },
    "release_status" : "stable",
    "resources" : {},
-   "version" : "1.20160809"
+   "version" : "1.20161219",
+   "x_serialization_backend" : "JSON::PP version 2.27300"
 }
