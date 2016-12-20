@@ -13,15 +13,15 @@ use Time::Seconds;
 
 =head1 NAME
 
-Date::Lectionary::Time
+Date::Lectionary::Time - Find your way in time relative to Sundays.
 
 =head1 VERSION
 
-Version 1.20161219
+Version 1.20161220
 
 =cut
 
-our $VERSION = '1.20161219';
+our $VERSION = '1.20161220';
 
 =head1 SYNOPSIS
 
@@ -35,11 +35,15 @@ Working in the liturgical time of the lectionary means tracking time relative to
 	my $sundayBeforeChristmas = prevSunday($christmasDay);
 	my $sundayClosestToChristmas = closestSunday($christmasDay);
 
-=head1 EXPORT
+=head1 EXPORTS
 
 nextSunday
+
 prevSunday
+
 closestSunday
+
+  use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday);
 
 =head1 SUBROUTINES/METHODS
 
@@ -169,15 +173,17 @@ Michael Wayne Arnold, C<< <marmanold at cpan.org> >>
 Please report any bugs or feature requests to C<bug-date-lectionary-time at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
-
-
-
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc Date::Lectionary::Time
 
+The development of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Lectionary-Time> -- and tested via TravisCI.
+
+=for html <a href="https://travis-ci.org/marmanold/Date-Lectionary-Time"><img src="https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master"></a>
+
+=for html <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 You can also look for information at:
 
@@ -200,10 +206,6 @@ L<http://cpanratings.perl.org/d/Date-Lectionary-Time>
 L<http://search.cpan.org/dist/Date-Lectionary-Time/>
 
 =back
-
-
-=head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 

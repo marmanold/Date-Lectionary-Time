@@ -28,8 +28,9 @@ WriteMakefile(
         'Time::Seconds'  => '1.31',
         'Exporter::Easy' => '0.18',
     },
-    META_ADD => {
-        resources => {
+    META_MERGE => {
+        "meta-spec" => { version => 2 },
+        resources   => {
             repository => {
                 type => 'git',
                 url  => 'git://github.com/marmanold/Date-Lectionary-Time.git',
