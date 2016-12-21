@@ -6,4 +6,3 @@ make distdir
 make disttest
 make dist
 make tardist
-make install

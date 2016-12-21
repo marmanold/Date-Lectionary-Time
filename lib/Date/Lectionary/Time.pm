@@ -181,7 +181,7 @@ You can find documentation for this module with the perldoc command.
 
 The development of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Lectionary-Time> -- and tested via TravisCI.
 
-=for html <a href="https://travis-ci.org/marmanold/Date-Lectionary-Time"><img src="https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master"></a>
+=for html <a href="https://travis-ci.org/marmanold/Date-Lectionary-Time"><img src="https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master" /></a>
 
 =for html <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
 
