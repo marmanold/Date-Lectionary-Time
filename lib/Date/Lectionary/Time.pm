@@ -17,11 +17,11 @@ Date::Lectionary::Time - Find your way in time relative to Sundays.
 
 =head1 VERSION
 
-Version 1.20161220
+Version 1.20161222
 
 =cut
 
-our $VERSION = '1.20161220';
+our $VERSION = '1.20161222';
 
 =head1 SYNOPSIS
 
@@ -181,7 +181,7 @@ You can find documentation for this module with the perldoc command.
 
 The development of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Lectionary-Time> -- and tested via TravisCI.
 
-=for html <a href="https://travis-ci.org/marmanold/Date-Lectionary-Time"><img src="https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master" /></a>
+=for html <a href='https://travis-ci.org/marmanold/Date-Lectionary-Time'><img src='https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master' /></a>
 
 =for html <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
 
@@ -206,6 +206,10 @@ L<http://cpanratings.perl.org/d/Date-Lectionary-Time>
 L<http://search.cpan.org/dist/Date-Lectionary-Time/>
 
 =back
+
+=head1 ACKNOWLEDGEMENTS
+
+Many thanks to my beautiful wife, Jennifer, and my amazing daughter, Rosemary.  But, above all, SOLI DEO GLORIA!
 
 =head1 LICENSE AND COPYRIGHT
 

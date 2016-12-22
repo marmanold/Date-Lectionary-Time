@@ -28,5 +28,5 @@ requires:
   perl: '5.022'
 resources:
   repository: git://github.com/marmanold/Date-Lectionary-Time.git
-version: '1.20161220'
+version: '1.20161222'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'
