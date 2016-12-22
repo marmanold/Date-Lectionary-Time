@@ -37,6 +37,13 @@ WriteMakefile(
                 web  => 'https://github.com/marmanold/Date-Lectionary-Time',
             },
         },
+        provides => {
+            'Date::Lectionary::Time' => {
+                file => 'lib/Date/Lectionary/Time.pm',
+            },
+        },
+        keywords  => [qw/ lectionary christian liturgical /],
+        x_twitter => 'https://www.twitter.com/marmanold/',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES    => 'Date-Lectionary-Time-*' },
