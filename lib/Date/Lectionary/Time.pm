@@ -4,7 +4,7 @@ use v5.22;
 use strict;
 use warnings;
 
-use Exporter::Easy ( OK => [qw(nextSunday prevSunday closestSunday)], );
+use Exporter::Easy ( OK => [qw(nextSunday prevSunday closestSunday isSunday)], );
 
 use Carp;
 use Try::Tiny;
@@ -17,20 +17,28 @@ Date::Lectionary::Time - Find your way in time relative to Sundays.
 
 =head1 VERSION
 
-Version 1.20161222
+Version 1.20170311
 
 =cut
 
-our $VERSION = '1.20161222';
+our $VERSION = '1.20170311';
 
 =head1 SYNOPSIS
 
-Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.
+Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.  Further, it can determine if the date given is a Sunday or not.
 
 	use Time::Piece;
-	use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday);
+	use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday isSunday);
 
 	my $christmasDay = Time::Piece->strptime("2015-12-25", "%Y-%m-%d");
+
+    if (isSunday($christmasDay)) {
+        say "Christmas is on a Sunday!";
+    }
+    else {
+        say "Christmas isn't on a Sunday.";
+    }
+
 	my $sundayAfterChristmas = nextSunday($christmasDay);
 	my $sundayBeforeChristmas = prevSunday($christmasDay);
 	my $sundayClosestToChristmas = closestSunday($christmasDay);
@@ -43,7 +51,9 @@ prevSunday
 
 closestSunday
 
-  use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday);
+isSunday
+
+  use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday isSunday);
 
 =head1 SUBROUTINES/METHODS
 
@@ -162,6 +172,40 @@ sub closestSunday {
     }
 
     return $closestSunday;
+}
+
+=head2 isSunday
+
+For a given Time::Piece date returns C<1> if the date is a Sunday or C<0> if the date isn't a Sunday.
+
+=cut
+
+sub isSunday {
+    my ( $class, @params ) = @_;
+    my $date = $params[0] // $class;
+    my $isSunday = 0;
+
+    if ( !length $date ) {
+        croak
+"Method [isSunday] expects an input argument of type Time::Piece.  The given type could not be determined.";
+    }
+
+    if ( $date->isa('Time::Piece') ) {
+        try {
+            if ($date->wday == 1) {
+                $isSunday = 1;
+            }
+        }
+        catch {
+            carp "Could not calculate the Sunday closest to $date.";
+        };
+    }
+    else {
+        croak
+"Method [isSunday] expects an input argument of type Time::Piece.";
+    }
+
+    return $isSunday;
 }
 
 =head1 AUTHOR

@@ -9,7 +9,11 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'ExtUtils::MakeMaker version 7.24, CPAN::Meta::Converter version 2.150010'
+generated_by: 'ExtUtils::MakeMaker version 7.24, CPAN::Meta::Converter version 2.150001'
+keywords:
+  - lectionary
+  - christian
+  - liturgical
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,6 +23,10 @@ no_index:
   directory:
     - t
     - inc
+provides:
+  Date::Lectionary::Time:
+    file: lib/Date/Lectionary/Time.pm
+    version: '1.20170311'
 requires:
   Carp: '1.38'
   Exporter::Easy: '0.18'
@@ -28,5 +36,5 @@ requires:
   perl: '5.022'
 resources:
   repository: git://github.com/marmanold/Date-Lectionary-Time.git
-version: '1.20161222'
-x_serialization_backend: 'CPAN::Meta::YAML version 0.018'
+version: '1.20170311'
+x_twitter: https://www.twitter.com/marmanold/

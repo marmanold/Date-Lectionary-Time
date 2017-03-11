@@ -4,7 +4,12 @@
       "Michael Wayne Arnold <marmanold@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 7.24, CPAN::Meta::Converter version 2.150010",
+   "generated_by" : "ExtUtils::MakeMaker version 7.24, CPAN::Meta::Converter version 2.150001",
+   "keywords" : [
+      "lectionary",
+      "christian",
+      "liturgical"
+   ],
    "license" : [
       "perl_5"
    ],
@@ -43,6 +48,12 @@
          }
       }
    },
+   "provides" : {
+      "Date::Lectionary::Time" : {
+         "file" : "lib/Date/Lectionary/Time.pm",
+         "version" : "1.20170311"
+      }
+   },
    "release_status" : "stable",
    "resources" : {
       "repository" : {
@@ -51,6 +62,6 @@
          "web" : "https://github.com/marmanold/Date-Lectionary-Time"
       }
    },
-   "version" : "1.20161222",
-   "x_serialization_backend" : "JSON::PP version 2.27400"
+   "version" : "1.20170311",
+   "x_twitter" : "https://www.twitter.com/marmanold/"
 }
