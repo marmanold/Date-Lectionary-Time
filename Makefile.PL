@@ -5,18 +5,15 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    NAME         => 'Date::Lectionary::Time',
-    AUTHOR       => q{Michael Wayne Arnold <marmanold@cpan.org>},
-    VERSION_FROM => 'lib/Date/Lectionary/Time.pm',
-    ABSTRACT =>
-'Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.',
-    LICENSE            => 'perl_5',
+    NAME               => 'Date::Lectionary::Time',
+    AUTHOR             => q{Michael Wayne Arnold <marmanold@cpan.org>},
+    VERSION_FROM       => 'lib/Date/Lectionary/Time.pm',
+    ABSTRACT           => 'Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.',
+    LICENSE            => 'freebsd',
     PL_FILES           => {},
     MIN_PERL_VERSION   => 5.022000,
-    CONFIGURE_REQUIRES => {
-        'ExtUtils::MakeMaker' => 0,
-    },
-    BUILD_REQUIRES => {
+    CONFIGURE_REQUIRES => { 'ExtUtils::MakeMaker' => 0, },
+    BUILD_REQUIRES     => {
         'Test::More'          => '1.302040',
         'Test::CheckManifest' => '0.9',
         'Test::Exception'     => '0.43',
@@ -39,8 +36,8 @@ WriteMakefile(
         },
         provides => {
             'Date::Lectionary::Time' => {
-                file => 'lib/Date/Lectionary/Time.pm',
-                version => '1.20170311',
+                file    => 'lib/Date/Lectionary/Time.pm',
+                version => '1.20171223',
             },
         },
         keywords  => [qw/ lectionary christian liturgical /],
