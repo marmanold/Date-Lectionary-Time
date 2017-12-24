@@ -1,15 +1,12 @@
-=head1 NAME
+# NAME
 
 Date::Lectionary::Time - Find your way in time relative to Sundays.
 
-=head1 VERSION
+# VERSION
 
 Version 1.20171223
 
-
-=cut
-
-=head1 SYNOPSIS
+# SYNOPSIS
 
 Working in the liturgical time of the lectionary means tracking time relative to Sundays.  This is a quick utility to find the next, previous, or the closest Sunday to a given date.  Further, it can determine if the date given is a Sunday or not.
 
@@ -29,7 +26,7 @@ Working in the liturgical time of the lectionary means tracking time relative to
     my $sundayBeforeChristmas = prevSunday($christmasDay);
     my $sundayClosestToChristmas = closestSunday($christmasDay);
 
-=head1 EXPORTS
+# EXPORTS
 
 nextSunday
 
@@ -39,98 +36,81 @@ closestSunday
 
 isSunday
 
-  use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday isSunday);
+    use Date::Lectionary::Time qw(nextSunday prevSunday closestSunday isSunday);
 
-=head1 SUBROUTINES/METHODS
+# SUBROUTINES/METHODS
 
-=head2 nextSunday
+## nextSunday
 
 For a given Time::Piece date returns a Time::Piece object of the date of the Sunday immediately following the given date.
 
-
-=cut
-
-=head2 prevSunday
+## prevSunday
 
 For a given Time::Piece date returns a Time::Piece object of the date of the Sunday immediately before the given date.
 
-
-=cut
-
-=head2 closestSunday
+## closestSunday
 
 For a given Time::Piece date returns a Time::Piece object of the date of the Sunday closest to the given date.
 
+## isSunday
 
-=cut
+For a given Time::Piece date returns `1` if the date is a Sunday or `0` if the date isn't a Sunday.
 
-=head2 isSunday
+# AUTHOR
 
-For a given Time::Piece date returns C<1> if the date is a Sunday or C<0> if the date isn't a Sunday.
+Michael Wayne Arnold, `<marmanold at cpan.org>`
 
+# BUGS
 
-=cut
+Please report any bugs or feature requests to `bug-date-lectionary-time at rt.cpan.org`, or through
+the web interface at [http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time](http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time).  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
-=head1 AUTHOR
-
-Michael Wayne Arnold, C<< <marmanold at cpan.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-date-lectionary-time at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
-
-=head1 SUPPORT
+# SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc Date::Lectionary::Time
 
-The development of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Lectionary-Time> -- and tested via TravisCI.
+The development of this module is hosted on GitHub -- [https://github.com/marmanold/Date-Lectionary-Time](https://github.com/marmanold/Date-Lectionary-Time) -- and tested via TravisCI.
 
-=for html <a href='https://travis-ci.org/marmanold/Date-Lectionary-Time'><img src='https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master' /></a>
+<div>
+    <a href='https://travis-ci.org/marmanold/Date-Lectionary-Time'><img src='https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master' /></a>
+</div>
 
-=for html <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
+<div>
+    <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
+</div>
 
 You can also look for information at:
 
-=over 4
+- RT: CPAN's request tracker (report bugs here)
 
-=item * RT: CPAN's request tracker (report bugs here)
+    [http://rt.cpan.org/NoAuth/Bugs.html?Dist=Date-Lectionary-Time](http://rt.cpan.org/NoAuth/Bugs.html?Dist=Date-Lectionary-Time)
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Date-Lectionary-Time>
+- AnnoCPAN: Annotated CPAN documentation
 
-=item * AnnoCPAN: Annotated CPAN documentation
+    [http://annocpan.org/dist/Date-Lectionary-Time](http://annocpan.org/dist/Date-Lectionary-Time)
 
-L<http://annocpan.org/dist/Date-Lectionary-Time>
+- CPAN Ratings
 
-=item * CPAN Ratings
+    [http://cpanratings.perl.org/d/Date-Lectionary-Time](http://cpanratings.perl.org/d/Date-Lectionary-Time)
 
-L<http://cpanratings.perl.org/d/Date-Lectionary-Time>
+- Search CPAN
 
-=item * Search CPAN
+    [http://search.cpan.org/dist/Date-Lectionary-Time/](http://search.cpan.org/dist/Date-Lectionary-Time/)
 
-L<http://search.cpan.org/dist/Date-Lectionary-Time/>
-
-=back
-
-=head1 ACKNOWLEDGEMENTS
+# ACKNOWLEDGEMENTS
 
 Many thanks to my beautiful wife, Jennifer, and my amazing daughter, Rosemary.  But, above all, SOLI DEO GLORIA!
 
-=head1 LICENSE AND COPYRIGHT
+# LICENSE AND COPYRIGHT
 
 Copyright 2016-2017 MICHAEL WAYNE ARNOLD
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+1\. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+2\. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-
-=cut
-
