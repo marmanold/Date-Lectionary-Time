@@ -4,7 +4,7 @@ Date::Lectionary::Time - Find your way in time relative to Sundays.
 
 # VERSION
 
-Version 1.20171223
+Version 1.20180418
 
 # SYNOPSIS
 
@@ -58,9 +58,17 @@ For a given Time::Piece date returns `1` if the date is a Sunday or `0` if the d
 
 # AUTHOR
 
-Michael Wayne Arnold, `<marmanold at cpan.org>`
+Michael Wayne Arnold, `<michael at rnold.info>`
 
 # BUGS
+
+<div>
+    <a href='https://travis-ci.org/marmanold/Date-Lectionary-Time'><img src='https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master' /></a>
+</div>
+
+<div>
+    <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
+</div>
 
 Please report any bugs or feature requests to `bug-date-lectionary-time at rt.cpan.org`, or through
 the web interface at [http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time](http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time).  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
@@ -70,16 +78,6 @@ the web interface at [http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectio
 You can find documentation for this module with the perldoc command.
 
     perldoc Date::Lectionary::Time
-
-The development of this module is hosted on GitHub -- [https://github.com/marmanold/Date-Lectionary-Time](https://github.com/marmanold/Date-Lectionary-Time) -- and tested via TravisCI.
-
-<div>
-    <a href='https://travis-ci.org/marmanold/Date-Lectionary-Time'><img src='https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master' /></a>
-</div>
-
-<div>
-    <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
-</div>
 
 You can also look for information at:
 
@@ -101,11 +99,11 @@ You can also look for information at:
 
 # ACKNOWLEDGEMENTS
 
-Many thanks to my beautiful wife, Jennifer, and my amazing daughter, Rosemary.  But, above all, SOLI DEO GLORIA!
+Many thanks to my beautiful wife, Jennifer, my amazing daughter, Rosemary, and my sweet son, Oliver.  But, above all, SOLI DEO GLORIA!
 
 # LICENSE AND COPYRIGHT
 
-Copyright 2016-2017 MICHAEL WAYNE ARNOLD
+Copyright 2016-2018 MICHAEL WAYNE ARNOLD
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 

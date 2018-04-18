@@ -4,7 +4,7 @@ Date::Lectionary::Time - Find your way in time relative to Sundays.
 
 =head1 VERSION
 
-Version 1.20171223
+Version 1.20180418
 
 
 =cut
@@ -73,9 +73,13 @@ For a given Time::Piece date returns C<1> if the date is a Sunday or C<0> if the
 
 =head1 AUTHOR
 
-Michael Wayne Arnold, C<< <marmanold at cpan.org> >>
+Michael Wayne Arnold, C<< <michael at rnold.info> >>
 
 =head1 BUGS
+
+=for html <a href='https://travis-ci.org/marmanold/Date-Lectionary-Time'><img src='https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master' /></a>
+
+=for html <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 Please report any bugs or feature requests to C<bug-date-lectionary-time at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Lectionary-Time>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
@@ -86,11 +90,6 @@ You can find documentation for this module with the perldoc command.
 
     perldoc Date::Lectionary::Time
 
-The development of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Lectionary-Time> -- and tested via TravisCI.
-
-=for html <a href='https://travis-ci.org/marmanold/Date-Lectionary-Time'><img src='https://travis-ci.org/marmanold/Date-Lectionary-Time.svg?branch=master' /></a>
-
-=for html <a href='https://coveralls.io/github/marmanold/Date-Lectionary-Time?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Lectionary-Time/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 You can also look for information at:
 
@@ -116,11 +115,11 @@ L<http://search.cpan.org/dist/Date-Lectionary-Time/>
 
 =head1 ACKNOWLEDGEMENTS
 
-Many thanks to my beautiful wife, Jennifer, and my amazing daughter, Rosemary.  But, above all, SOLI DEO GLORIA!
+Many thanks to my beautiful wife, Jennifer, my amazing daughter, Rosemary, and my sweet son, Oliver.  But, above all, SOLI DEO GLORIA!
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2016-2017 MICHAEL WAYNE ARNOLD
+Copyright 2016-2018 MICHAEL WAYNE ARNOLD
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
