@@ -60,7 +60,7 @@
    "provides" : {
       "Date::Lectionary::Time" : {
          "file" : "lib/Date/Lectionary/Time.pm",
-         "version" : "1.20180419"
+         "version" : "v1.20180422.1"
       }
    },
    "release_status" : "stable",
@@ -71,7 +71,7 @@
          "web" : "https://github.com/marmanold/Date-Lectionary-Time"
       }
    },
-   "version" : "v1.20180422",
+   "version" : "v1.20180422.1",
    "x_serialization_backend" : "JSON::PP version 2.97001",
    "x_twitter" : "https://www.twitter.com/marmanold/"
 }

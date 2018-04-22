@@ -46,7 +46,7 @@ WriteMakefile(
         provides => {
             'Date::Lectionary::Time' => {
                 file    => 'lib/Date/Lectionary/Time.pm',
-                version => '1.20180419',
+                version => '1.20180422.1',
             },
         },
         keywords  => [qw/ lectionary christian liturgical /],

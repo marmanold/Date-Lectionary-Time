@@ -4,7 +4,7 @@ Date::Lectionary::Time - Find your way in time relative to Sundays.
 
 # VERSION
 
-Version 1.20180422
+Version 1.20180422.1
 
 # SYNOPSIS
 
