@@ -32,7 +32,6 @@ WriteMakefile(
         'Time::Piece'     => '1.31',
         'Time::Seconds'   => '1.31',
         'Exporter::Easy'  => '0.18',
-        'Try::Tiny::Tiny' => '0.001',
         'Try::Catch'      => '1.1.0',
     },
     META_MERGE => {
@@ -47,7 +46,7 @@ WriteMakefile(
         provides => {
             'Date::Lectionary::Time' => {
                 file    => 'lib/Date/Lectionary/Time.pm',
-                version => '1.20180418',
+                version => '1.20180419',
             },
         },
         keywords  => [qw/ lectionary christian liturgical /],

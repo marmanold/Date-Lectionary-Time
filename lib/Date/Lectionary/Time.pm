@@ -4,8 +4,6 @@ use v5.22;
 use strict;
 use warnings;
 
-use Try::Tiny::Tiny;
-
 use Exporter::Easy ( OK => [qw(nextSunday prevSunday closestSunday isSunday)], );
 
 use Carp;
@@ -19,11 +17,11 @@ Date::Lectionary::Time - Find your way in time relative to Sundays.
 
 =head1 VERSION
 
-Version 1.20180418
+Version 1.20180422
 
 =cut
 
-use version; our $VERSION = version->declare("v1.20180418");
+use version; our $VERSION = version->declare("v1.20180422");
 
 =head1 SYNOPSIS
 
